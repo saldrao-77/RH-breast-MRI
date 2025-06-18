@@ -22,11 +22,9 @@ export default function BookConsultation() {
     setIsSubmitting(true)
 
     try {
-      const { error } = await supabase.from("leads").insert([
+      const { error } = await supabase.from("breast_mri_leads").insert([
         {
           email: email,
-          first_name: "",
-          last_name: "",
           source: "consultation_page",
         },
       ])
@@ -44,7 +42,7 @@ export default function BookConsultation() {
   }
 
   const handleEmailUs = () => {
-    window.location.href = "mailto:hello@robinhealth.com"
+    window.location.href = "mailto:support@rbnhealth.com"
   }
 
   const handleCallUs = () => {
@@ -169,8 +167,6 @@ export default function BookConsultation() {
                 Text Us
               </Button>
             </div>
-
-            <p className="text-gray-500 text-sm mt-4">Phone: (262) 501-8982 • Available Monday-Friday, 8AM-6PM CT</p>
           </CardContent>
         </Card>
 
